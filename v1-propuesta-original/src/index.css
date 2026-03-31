@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-black: #0a0a0a;
+  --color-brand-yellow: #F5A800;
+  --color-brand-yellow-dark: #C88500;
+  --color-brand-white: #FFFFFF;
+  --color-brand-red: #E03030;
+  --color-brand-green-dark: #2D4A1E;
+  --color-brand-gray-light: #F4F2EE;
+  --color-brand-gray-mid: #CCCCCC;
+  
+  --font-bebas: "Bebas Neue", cursive;
+  --font-barlow-cond: "Barlow Condensed", sans-serif;
+  --font-barlow: "Barlow", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-brand-black text-brand-white font-barlow overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .hero-title {
+    @apply font-bebas leading-[0.9] tracking-[2px];
+    font-size: clamp(4rem, 8vw, 7.5rem);
+  }
+
+  .section-title {
+    @apply font-bebas tracking-[2px] leading-[0.95];
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+
+  .text-stroke-yellow {
+    -webkit-text-stroke: 2px var(--color-brand-yellow);
+    color: transparent;
+  }
+
+  .text-stroke-white {
+    -webkit-text-stroke: 2px var(--color-brand-white);
+    color: transparent;
+  }
+
+  .text-stroke-black {
+    -webkit-text-stroke: 2px var(--color-brand-black);
+    color: transparent;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker 18s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1) rotate(-6deg); }
+  50% { transform: scale(1.05) rotate(-6deg); }
+}
+
+.animate-pulse-badge {
+  animation: pulse-badge 2s ease-in-out infinite;
+}
