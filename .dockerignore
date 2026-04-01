@@ -6,7 +6,6 @@ build
 !.env.example
 Cart_Flow_Subday
 v1-propuesta-original
-identidad y menu
 # Exclude root-level demo images but keep src/assets
 /demo-*.png
 /demo-*.webp
