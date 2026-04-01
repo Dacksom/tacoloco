@@ -13,6 +13,7 @@ export default function CartDrawer() {
     totalPrice,
     isCartOpen,
     setIsCartOpen,
+    setIsCheckoutOpen,
   } = useCart();
 
   const generateWhatsAppMessage = () => {
@@ -29,11 +30,8 @@ export default function CartDrawer() {
   };
 
   const handleCheckout = () => {
-    const message = generateWhatsAppMessage();
-    window.open(
-      `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${message}`,
-      '_blank'
-    );
+    setIsCartOpen(false);
+    setIsCheckoutOpen(true);
   };
 
   return (
@@ -177,14 +175,13 @@ export default function CartDrawer() {
 
                 <button
                   onClick={handleCheckout}
-                  className="w-full bg-green hover:bg-green-light text-white py-4 rounded-xl font-heading font-black uppercase text-base flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-xl"
+                  className="w-full bg-yellow hover:bg-yellow-dark text-black py-4 rounded-xl font-heading font-black uppercase text-base flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-xl"
                 >
-                  <MessageCircle size={20} />
-                  Pedir por WhatsApp
+                  Continuar al Checkout
                 </button>
 
-                <p className="text-[0.65rem] text-center text-white/30 uppercase font-bold tracking-[1px]">
-                  Al confirmar, se abrirá WhatsApp con tu pedido listo
+                <p className="text-[0.65rem] text-center text-white/40 uppercase font-bold tracking-[1px]">
+                  Configura tu delivery y pago en el siguiente paso
                 </p>
               </div>
             )}
