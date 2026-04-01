@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronDown } from 'lucide-react';
-import plateMain from '../../assets/plate-main.webp';
+import plateMain from '../../assets/plate-main.png';
 import plateHerbs from '../../assets/plate-herbs.png';
 import { useTypewriter } from '../../hooks/useTypewriter';
 
