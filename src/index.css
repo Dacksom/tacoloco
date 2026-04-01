@@ -300,7 +300,6 @@
   display: block;
   width: 24px;
   height: 2px;
-  background-color: currentColor;
   transition: all 0.3s ease;
   transform-origin: center;
 }
