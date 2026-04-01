@@ -34,7 +34,8 @@ export const loadGoogleMaps = (): Promise<void> => {
     const script = document.createElement('script');
     script.id = 'google-maps-script';
     // Remove onload since we rely on callback=initMap
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBiHIV3TsYTYWt-tPLy8HgENQXkPqmplEY&libraries=places&language=es&region=VE&callback=initMap`;
+    const apiKey = import.meta.env.VITE_GOOGLE_MAPS_KEY;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&language=es&region=VE&callback=initMap`;
     script.async = true;
     script.defer = true;
     script.onerror = (err) => {
