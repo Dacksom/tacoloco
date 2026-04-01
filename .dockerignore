@@ -1,0 +1,20 @@
+node_modules
+dist
+build
+.git
+.env*
+!.env.example
+Cart_Flow_Subday
+v1-propuesta-original
+identidad y menu
+# Exclude root-level demo images but keep src/assets
+/demo-*.png
+/demo-*.webp
+/demo-*.xmp
+/logo taco loco.png
+/taco-icon.obj
+*.log
+.DS_Store
+ts-check.txt
+README.md
+metadata.json
